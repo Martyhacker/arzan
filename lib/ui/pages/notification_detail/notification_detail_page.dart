@@ -18,7 +18,7 @@ class _NotificationDetailPageState extends State<NotificationDetailPage> {
     return Scaffold(
       appBar: DefaultAppBar(
           titleText: 'Notification Detail',
-          back: const NotificationsPage(),
+          back: null,
           appBar: AppBar()),
       body: SingleChildScrollView(
         child: Container(

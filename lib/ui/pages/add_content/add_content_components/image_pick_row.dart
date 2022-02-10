@@ -19,18 +19,19 @@ class _ImagePickingRowState extends State<ImagePickingRow> {
       if (image == null) return;
 
       setState(() {
-        for (int i = 1; i <= 5; i++) {
-          setState(() => images.add(image[i]));
-        }
+        image.forEach((element) {
+        if (images.length < 5) images.add(element);
       });
+      });
+      // for (int i = 0; i <= 4; i++) {
+      //   setState(() => images.add(image[i]));
+      // }
     } on PlatformException catch (e) {
       print('Failed to pick image: ${e.toString()}');
     }
   }
 
-  _deleteImages() {
-    setState(() => images.clear());
-  }
+  _deleteImages() => setState(() => images.clear());
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +40,7 @@ class _ImagePickingRowState extends State<ImagePickingRow> {
       children: [
         InkWell(
           onTap: () {
-            if (images.length == 5) {
+            if (images.length >= 5) {
               _deleteImages();
             } else {
               _imgFromGallery();

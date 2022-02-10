@@ -55,7 +55,7 @@ class CityButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => InkWell(
-        onTap: model.onTap,
+        onTap: ()=> MyRouter().route(context, const TabScreen()),
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
           margin: const EdgeInsets.only(bottom: 10, left: 25, right: 25),

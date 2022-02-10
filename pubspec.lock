@@ -5,147 +5,147 @@ packages:
     dependency: transitive
     description:
       name: args
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.3.0"
   async:
     dependency: transitive
     description:
       name: async
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.8.1"
   auto_size_text:
     dependency: "direct main"
     description:
       name: auto_size_text
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "3.0.0"
   boolean_selector:
     dependency: transitive
     description:
       name: boolean_selector
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.1.0"
   carousel_slider:
     dependency: "direct main"
     description:
       name: carousel_slider
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "4.0.0"
   characters:
     dependency: transitive
     description:
       name: characters
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.1.0"
   charcode:
     dependency: transitive
     description:
       name: charcode
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.3.1"
   clock:
     dependency: transitive
     description:
       name: clock
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.1.0"
   collection:
     dependency: transitive
     description:
       name: collection
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.15.0"
   connectivity_plus:
     dependency: "direct main"
     description:
       name: connectivity_plus
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.2.0"
   connectivity_plus_linux:
     dependency: transitive
     description:
       name: connectivity_plus_linux
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.2.0"
   connectivity_plus_macos:
     dependency: transitive
     description:
       name: connectivity_plus_macos
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.2.1"
   connectivity_plus_platform_interface:
     dependency: transitive
     description:
       name: connectivity_plus_platform_interface
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.2.0"
   connectivity_plus_web:
     dependency: transitive
     description:
       name: connectivity_plus_web
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.2.0"
   connectivity_plus_windows:
     dependency: transitive
     description:
       name: connectivity_plus_windows
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.2.0"
   cross_file:
     dependency: transitive
     description:
       name: cross_file
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.3.2"
   cupertino_icons:
     dependency: "direct main"
     description:
       name: cupertino_icons
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.0.4"
   dbus:
     dependency: transitive
     description:
       name: dbus
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.6.8"
   fake_async:
     dependency: transitive
     description:
       name: fake_async
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.2.0"
   ffi:
     dependency: transitive
     description:
       name: ffi
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.1.2"
   file:
     dependency: transitive
     description:
       name: file
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "6.1.2"
   flutter:
@@ -157,49 +157,49 @@ packages:
     dependency: "direct dev"
     description:
       name: flutter_lints
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.0.4"
   flutter_local_notifications:
     dependency: "direct main"
     description:
       name: flutter_local_notifications
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "9.2.0"
   flutter_local_notifications_linux:
     dependency: transitive
     description:
       name: flutter_local_notifications_linux
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.4.1+1"
   flutter_local_notifications_platform_interface:
     dependency: transitive
     description:
       name: flutter_local_notifications_platform_interface
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "5.0.0"
   flutter_plugin_android_lifecycle:
     dependency: transitive
     description:
       name: flutter_plugin_android_lifecycle
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.0.5"
   flutter_spinkit:
     dependency: "direct main"
     description:
       name: flutter_spinkit
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "5.1.0"
   flutter_svg:
     dependency: "direct main"
     description:
       name: flutter_svg
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.0.3"
   flutter_test:
@@ -216,233 +216,233 @@ packages:
     dependency: "direct main"
     description:
       name: get
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "4.6.1"
   http:
     dependency: "direct main"
     description:
       name: http
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.13.4"
   http_parser:
     dependency: transitive
     description:
       name: http_parser
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "4.0.0"
   image_picker:
     dependency: "direct main"
     description:
       name: image_picker
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.8.4+7"
+    version: "0.8.4+8"
   image_picker_for_web:
     dependency: transitive
     description:
       name: image_picker_for_web
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.1.5"
   image_picker_platform_interface:
     dependency: transitive
     description:
       name: image_picker_platform_interface
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.4.3"
   js:
     dependency: transitive
     description:
       name: js
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.6.3"
   launch_review:
     dependency: "direct main"
     description:
       name: launch_review
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "3.0.1"
   lints:
     dependency: transitive
     description:
       name: lints
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.0.1"
   matcher:
     dependency: transitive
     description:
       name: matcher
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.12.10"
   meta:
     dependency: transitive
     description:
       name: meta
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.7.0"
   nested:
     dependency: transitive
     description:
       name: nested
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.0.0"
   nm:
     dependency: transitive
     description:
       name: nm
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.4.3"
+    version: "0.4.4"
   path:
     dependency: transitive
     description:
       name: path
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.8.0"
   path_drawing:
     dependency: transitive
     description:
       name: path_drawing
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.0.0"
   path_parsing:
     dependency: transitive
     description:
       name: path_parsing
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.0.0"
   path_provider_linux:
     dependency: transitive
     description:
       name: path_provider_linux
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.1.5"
   path_provider_platform_interface:
     dependency: transitive
     description:
       name: path_provider_platform_interface
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.0.3"
   path_provider_windows:
     dependency: transitive
     description:
       name: path_provider_windows
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.0.5"
   pedantic:
     dependency: transitive
     description:
       name: pedantic
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.11.1"
   petitparser:
     dependency: transitive
     description:
       name: petitparser
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "4.4.0"
   platform:
     dependency: transitive
     description:
       name: platform
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "3.1.0"
   plugin_platform_interface:
     dependency: transitive
     description:
       name: plugin_platform_interface
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.1.2"
   process:
     dependency: transitive
     description:
       name: process
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "4.2.4"
   provider:
     dependency: "direct main"
     description:
       name: provider
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "6.0.2"
   shared_preferences:
     dependency: "direct main"
     description:
       name: shared_preferences
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "2.0.12"
+    version: "2.0.13"
   shared_preferences_android:
     dependency: transitive
     description:
       name: shared_preferences_android
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.0.10"
   shared_preferences_ios:
     dependency: transitive
     description:
       name: shared_preferences_ios
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.0.9"
   shared_preferences_linux:
     dependency: transitive
     description:
       name: shared_preferences_linux
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "2.0.4"
+    version: "2.1.0"
   shared_preferences_macos:
     dependency: transitive
     description:
       name: shared_preferences_macos
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "2.0.2"
+    version: "2.0.3"
   shared_preferences_platform_interface:
     dependency: transitive
     description:
       name: shared_preferences_platform_interface
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.0.0"
   shared_preferences_web:
     dependency: transitive
     description:
       name: shared_preferences_web
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.0.3"
   shared_preferences_windows:
     dependency: transitive
     description:
       name: shared_preferences_windows
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "2.0.4"
+    version: "2.1.0"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -452,105 +452,105 @@ packages:
     dependency: transitive
     description:
       name: source_span
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.8.1"
   sqflite:
     dependency: "direct main"
     description:
       name: sqflite
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.0.2"
   sqflite_common:
     dependency: transitive
     description:
       name: sqflite_common
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.0.1+1"
   stack_trace:
     dependency: transitive
     description:
       name: stack_trace
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.10.0"
   stream_channel:
     dependency: transitive
     description:
       name: stream_channel
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.1.0"
   string_scanner:
     dependency: transitive
     description:
       name: string_scanner
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.1.0"
   synchronized:
     dependency: transitive
     description:
       name: synchronized
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "3.0.0"
   term_glyph:
     dependency: transitive
     description:
       name: term_glyph
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.2.0"
   test_api:
     dependency: transitive
     description:
       name: test_api
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.4.2"
   timezone:
     dependency: transitive
     description:
       name: timezone
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.8.0"
   typed_data:
     dependency: transitive
     description:
       name: typed_data
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.3.0"
   vector_math:
     dependency: transitive
     description:
       name: vector_math
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.1.0"
   win32:
     dependency: transitive
     description:
       name: win32
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.3.6"
   xdg_directories:
     dependency: transitive
     description:
       name: xdg_directories
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.2.0"
+    version: "0.2.0+1"
   xml:
     dependency: transitive
     description:
       name: xml
-      url: "https://dartlang-pub.appspot.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "5.3.1"
 sdks:

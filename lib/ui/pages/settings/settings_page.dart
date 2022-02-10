@@ -23,6 +23,7 @@ class _SettingsPageState extends State<SettingsPage> {
   Widget build(BuildContext context) {
     ThemeProvider themeProvider =
         Provider.of<ThemeProvider>(context, listen: false);
+        Size _size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -104,14 +105,26 @@ class _SettingsPageState extends State<SettingsPage> {
                       .textTheme
                       .headline6!
                       .copyWith(fontWeight: FontWeight.normal)),
-              children: const [
+              children: [
                 ListTile(
-                  leading: Icon(Icons.translate_rounded),
-                  title: Text('Turkmen'),
+                  leading: Container(
+                      width: _size.width/12,
+                      decoration: const BoxDecoration(
+                          shape: BoxShape.circle,
+                          image: DecorationImage(
+                              fit: BoxFit.fill,
+                              image: AssetImage('assets/flags/tkm.png')))),
+                  title: const Text('Turkmen'),
                 ),
                 ListTile(
-                  leading: Icon(Icons.translate_rounded),
-                  title: Text('Russian'),
+                  leading: Container(
+                      width: _size.width/12,
+                      decoration: const BoxDecoration(
+                          shape: BoxShape.circle,
+                          image: DecorationImage(
+                              fit: BoxFit.fill,
+                              image: AssetImage('assets/flags/rus.png')))),
+                  title: const Text('Russian'),
                 ),
               ],
             ),

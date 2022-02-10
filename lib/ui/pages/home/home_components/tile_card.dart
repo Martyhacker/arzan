@@ -17,7 +17,7 @@ class HomeTile extends StatelessWidget {
           Container(
               width: _size.width,
               height: _size.height / 5,
-              padding: const EdgeInsets.all(10),
+              padding: const EdgeInsets.all(5),
               margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
               decoration: mbd.tileCard(),
               child: Row(

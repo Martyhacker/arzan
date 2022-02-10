@@ -40,7 +40,7 @@ class _OfficialUsersPageState extends State<OfficialUsersPage> {
                 child: SizedBox(
                   width: _size.width,
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [

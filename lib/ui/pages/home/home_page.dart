@@ -27,19 +27,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  static const menuItems = [
-    'Asgabat',
-    'Ahal',
-    'Mary',
-    'Lebap',
-    'Dasoguz',
-    'Balkan'
-  ];
-  String _btn1SelectedVal = 'Asgabat';
-  final List<DropdownMenuItem<String>> _dropdownMenuItems = menuItems
-      .map((e) => DropdownMenuItem(
-          value: e, child: Center(child: Text(e, textAlign: TextAlign.center))))
-      .toList();
   @override
   Widget build(BuildContext context) {
     Size _size = MediaQuery.of(context).size;
@@ -65,7 +52,7 @@ class _HomePageState extends State<HomePage> {
                 bottomRight: Radius.circular(25),
               )),
               flexibleSpace: FlexibleSpaceBar(
-                  collapseMode: CollapseMode.none,
+                  collapseMode: CollapseMode.pin,
                   stretchModes: const [StretchMode.blurBackground],
                   background: const MyCarousel(),
                   centerTitle: true,
@@ -143,8 +130,7 @@ class _HomePageState extends State<HomePage> {
             ),
             SliverToBoxAdapter(
               child: Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+                padding: const EdgeInsets.symmetric(vertical: 20),
                 child: Column(mainAxisSize: MainAxisSize.min, children: [
                   //const HomeViewLabel(),
                   Row(

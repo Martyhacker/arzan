@@ -7,7 +7,7 @@ class MyViewBuilder {
         physics: const NeverScrollableScrollPhysics(),
         shrinkWrap: true,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 3, childAspectRatio: 0.58),
+            crossAxisCount: 3, childAspectRatio: 0.55),
         itemBuilder: (context, index) => widget);
   }
 
@@ -23,7 +23,7 @@ class MyViewBuilder {
     return GridView.builder(
         itemCount: 9,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 3, childAspectRatio: 0.6, mainAxisSpacing: 6),
+            crossAxisCount: 3, childAspectRatio: 0.55),
         itemBuilder: (context, index) => widget);
   }
 

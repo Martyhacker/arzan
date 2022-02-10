@@ -1,13 +1,9 @@
-import 'dart:io';
-
 import 'package:arzan/core/constants/palette.dart';
+import 'package:arzan/core/style/my_input_decorations.dart';
 import 'package:arzan/core/widgets/custom_button.dart';
 import 'package:arzan/core/widgets/default_app_bar.dart';
-import 'package:arzan/ui/pages/home/home_page.dart';
-import 'package:auto_size_text/auto_size_text.dart';
+import 'package:arzan/ui/pages/add_content/add_content_components/content_region_dropdown.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:image_picker/image_picker.dart';
 
 import 'add_content_components/image_pick_row.dart';
 
@@ -40,8 +36,8 @@ class _AddContentPageState extends State<AddContentPage> {
     }
 
     return Scaffold(
-      appBar: DefaultAppBar(
-          titleText: 'Add content', back: const HomePage(), appBar: AppBar()),
+      appBar:
+          DefaultAppBar(titleText: 'Add content', back: null, appBar: AppBar()),
       body: SingleChildScrollView(
         child: Container(
           width: _size.width,
@@ -56,24 +52,7 @@ class _AddContentPageState extends State<AddContentPage> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Container(
-                width: _size.width,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                margin: const EdgeInsets.symmetric(horizontal: 25),
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(10),
-                    boxShadow: const [
-                      BoxShadow(
-                          color: Colors.grey, blurRadius: 5, spreadRadius: .5)
-                    ]),
-                child: const AutoSizeText('Ashgabat',
-                    textAlign: TextAlign.center,
-                    minFontSize: 20,
-                    maxLines: 1,
-                    style: TextStyle(fontWeight: FontWeight.bold)),
-              ),
+              const ContentRegionDropdown(),
               const SizedBox(height: 20),
               const ImagePickingRow(),
               const SizedBox(height: 20),
@@ -84,10 +63,8 @@ class _AddContentPageState extends State<AddContentPage> {
                   hintText: 'Title',
                   filled: true,
                   fillColor: Palette.kGrey,
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10)),
-                  enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10)),
+                  border: MyInputDecs().myOutlineBorder(),
+                  enabledBorder: MyInputDecs().myOutlineBorder(),
                 ),
               ),
               const SizedBox(height: 20),
@@ -98,10 +75,8 @@ class _AddContentPageState extends State<AddContentPage> {
                   hintText: 'Description',
                   filled: true,
                   fillColor: Palette.kGrey,
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10)),
-                  enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10)),
+                  border: MyInputDecs().myOutlineBorder(),
+                  enabledBorder: MyInputDecs().myOutlineBorder(),
                 ),
               ),
               CustomButton(
@@ -115,3 +90,5 @@ class _AddContentPageState extends State<AddContentPage> {
     );
   }
 }
+
+

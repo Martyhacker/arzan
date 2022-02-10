@@ -71,7 +71,7 @@ class UserCircle extends StatelessWidget {
           return Icon(
             Icons.account_circle_outlined,
             color: Colors.white,
-            size: constraint.biggest.height,
+            size: constraint.biggest.width,
           );
         },
       ),
