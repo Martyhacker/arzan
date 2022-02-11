@@ -1,7 +1,9 @@
+import 'package:arzan/core/utils/drawer_controller.dart';
 import 'package:arzan/core/utils/my_router.dart';
 import 'package:arzan/core/utils/view_builder.dart';
 import 'package:arzan/core/views/search_view.dart';
 import 'package:arzan/core/views/user_view.dart';
+import 'package:arzan/core/widgets/my_drawer.dart';
 import 'package:arzan/core/widgets/user_block.dart';
 import 'package:arzan/core/widgets/user_tile.dart';
 import 'package:arzan/ui/pages/home/home_components/big_card.dart';
@@ -55,6 +57,8 @@ class _SearchPageState extends State<SearchPage> with TickerProviderStateMixin {
     return WillPopScope(
       onWillPop: () => MyRouter().change(context, const HomePage()),
       child: Scaffold(
+        key: context.read<MenuController>().scaffoldKey,
+        drawer: const MyDrawer(),
           appBar: AppBar(
             backgroundColor: Colors.white,
             title: const SearchBar(),

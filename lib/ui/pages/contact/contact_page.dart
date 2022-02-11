@@ -1,5 +1,7 @@
+import 'package:arzan/core/constants/constants.dart';
 import 'package:arzan/core/constants/palette.dart';
 import 'package:arzan/core/style/my_input_decorations.dart';
+import 'package:arzan/core/style/my_paddings_margins.dart';
 import 'package:arzan/core/widgets/custom_button.dart';
 import 'package:arzan/core/widgets/default_app_bar.dart';
 import 'package:flutter/material.dart';
@@ -22,9 +24,9 @@ class ContactUsPage extends StatelessWidget {
         child: Container(
           width: _size.width,
           decoration: BoxDecoration(
-              color: Colors.white, borderRadius: BorderRadius.circular(10)),
-          margin: const EdgeInsets.all(10),
-          padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 15),
+              color: kLightCardColor, borderRadius: BorderRadius.circular(10)),
+          margin: context.eiAll(10),
+          padding: context.eiSym(v: 20, h: 15),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [

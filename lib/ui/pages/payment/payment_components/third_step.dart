@@ -1,5 +1,6 @@
 import 'package:arzan/core/constants/palette.dart';
 import 'package:arzan/core/widgets/custom_button.dart';
+import 'package:arzan/ui/pages/payment/payment_components/choose_card_button.dart';
 import 'package:flutter/material.dart';
 
 class ThirdStep extends StatefulWidget {
@@ -10,48 +11,35 @@ class ThirdStep extends StatefulWidget {
 }
 
 class _ThirdStepState extends State<ThirdStep> {
+  selectCardDialog(){
+    var alertDialog = AlertDialog(
+      title: const Text('Choose Card', textAlign: TextAlign.center,),
+      content: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          ChooseCardButton(text: 'Aman Amanow', onTap: (){}),
+          AddCardButton(onTap: (){})
+        ],
+      ),
+    );
+    showDialog(context: context, builder: (context)=>alertDialog);
+  }
   @override
   Widget build(BuildContext context) {
-    Size _size = MediaQuery.of(context).size;
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
         Text('3 STEP',
             style: Theme.of(context).textTheme.headline5!.copyWith(
                 fontWeight: FontWeight.bold, color: Palette.kSoftGreen)),
-        Text(
-          'Confirmation',
-          style: Theme.of(context)
-              .textTheme
-              .headline6!
-              .copyWith(fontWeight: FontWeight.bold),
-        ),
+        Text('Confirmation',
+            style: Theme.of(context)
+                .textTheme
+                .headline6!
+                .copyWith(fontWeight: FontWeight.bold)),
         Column(
-          children: [
-            Container(
-              width: _size.width,
-              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
-              margin: const EdgeInsets.symmetric(vertical: 25),
-              decoration: BoxDecoration(
-                  color: Palette.kGrey,
-                  borderRadius: BorderRadius.circular(10),
-                  boxShadow: const [
-                    BoxShadow(
-                        color: Colors.grey,
-                        blurRadius: 3,
-                        spreadRadius: .1,
-                        offset: Offset(0, 5))
-                  ]),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Icon(Icons.credit_card_rounded, color: Palette.kSoftGreen),
-                  Text('Choose card',
-                      style: Theme.of(context).textTheme.headline6),
-                  const SizedBox()
-                ],
-              ),
-            ),
+          children:  [
+            ChooseCardButton(text: 'Choose Card',onTap: ()=>selectCardDialog(),),
             const ConfirmationDatas(data: 'Service', value: 'Banner'),
             const ConfirmationDatas(data: 'Region', value: 'AG, AH, MR'),
             const ConfirmationDatas(data: 'Total', value: '200 TMT'),
@@ -63,6 +51,8 @@ class _ThirdStepState extends State<ThirdStep> {
     );
   }
 }
+
+
 
 class ConfirmationDatas extends StatelessWidget {
   final String data, value;

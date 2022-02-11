@@ -1,5 +1,6 @@
 import 'package:arzan/core/constants/palette.dart';
 import 'package:arzan/core/style/my_input_decorations.dart';
+import 'package:arzan/core/style/my_paddings_margins.dart';
 import 'package:arzan/core/widgets/custom_button.dart';
 import 'package:arzan/core/widgets/default_app_bar.dart';
 import 'package:arzan/ui/pages/add_content/add_content_components/content_region_dropdown.dart';
@@ -41,8 +42,8 @@ class _AddContentPageState extends State<AddContentPage> {
       body: SingleChildScrollView(
         child: Container(
           width: _size.width,
-          margin: const EdgeInsets.all(15),
-          padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 10),
+          margin: context.eiAll(15),
+          padding: context.eiSym(v: 50, h: 10),
           decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(10),

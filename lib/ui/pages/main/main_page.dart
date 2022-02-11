@@ -30,7 +30,8 @@ class _TabScreenState extends State<TabScreen> {
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
           decoration: const BoxDecoration(
               borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(25), topRight: Radius.circular(25))),
+                  topLeft: Radius.circular(25),
+                  topRight: Radius.circular(25))),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -86,7 +87,8 @@ class _TabScreenState extends State<TabScreen> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
       floatingActionButton: MyFabButton(
-          onPressed: () => MyRouter().route(context, const AddContentPage())),
+          onPressed: () =>
+              MyRouter().route(context, const AddContentPage())),
     );
   }
 }

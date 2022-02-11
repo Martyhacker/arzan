@@ -1,7 +1,6 @@
 import 'package:arzan/core/constants/constants.dart';
 import 'package:arzan/core/constants/palette.dart';
 import 'package:arzan/core/widgets/default_app_bar.dart';
-import 'package:arzan/ui/pages/notifications/notifications_page.dart';
 import 'package:flutter/material.dart';
 
 class NotificationDetailPage extends StatefulWidget {

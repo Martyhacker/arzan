@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 class CityModel {
   final int id;
   final String name;

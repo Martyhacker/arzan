@@ -17,13 +17,17 @@ class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     Size _size = MediaQuery.of(context).size;
+    double _width = _size.width;
+    double _height = _size.height;
     return Scaffold(
       body: InkWell(
         onTap: () => MyRouter().route(context, const SelectRegionPage()),
-        child: Container(
+        child: AnimatedContainer(
             padding: const EdgeInsets.symmetric(horizontal: 50),
-            width: _size.width,
-            height: _size.height,
+            width: _width,
+            height: _height,
+            duration: const Duration(seconds: 5),
+            curve: Curves.linear,
             decoration: MyBoxDecs().gradientBack(),
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.center, children: [

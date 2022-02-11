@@ -1,5 +1,6 @@
 import 'package:arzan/core/constants/constants.dart';
-import 'package:arzan/core/constants/palette.dart';
+import 'package:arzan/core/style/my_paddings_margins.dart';
+import 'package:arzan/core/widgets/upper_circle_logo.dart';
 import 'package:flutter/material.dart';
 
 class TermsPage extends StatefulWidget {
@@ -34,16 +35,8 @@ class _TermsPageState extends State<TermsPage> {
                   children: [
                     Container(
                       width: _size.width,
-                      margin: EdgeInsets.only(
-                          left: 10,
-                          right: 10,
-                          top: _size.height / 4,
-                          bottom: 50),
-                      padding: EdgeInsets.only(
-                          top: _size.height / 10,
-                          left: 10,
-                          right: 10,
-                          bottom: 10),
+                      margin: context.mTermsPage(),
+                      padding: context.pTermsPage(),
                       decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(20)),
@@ -61,32 +54,17 @@ class _TermsPageState extends State<TermsPage> {
                       ),
                     ),
                     Positioned(
-                      top: _size.height / 5,
-                      left: 0,
-                      right: 0,
-                      child: Container(
-                          height: _size.height / 8,
-                          padding: const EdgeInsets.all(10),
-                          decoration: const BoxDecoration(
-                              color: Colors.white, shape: BoxShape.circle),
-                          child: Container(
-                              decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  gradient: LinearGradient(
-                                      begin: Alignment.topCenter,
-                                      end: Alignment.bottomCenter,
-                                      colors: [
-                                        Palette.kSoftGreen,
-                                        Palette.kHardGreen
-                                      ])),
-                              child: Center(
-                                child: Icon(
-                                  Icons.receipt_long_rounded,
-                                  color: Colors.white,
-                                  size: _size.width / 6,
-                                ),
-                              ))),
-                    )
+                        top: _size.height / 5,
+                        left: 0,
+                        right: 0,
+                        child: UpperCircleLogo(
+                            child: Center(
+                          child: Icon(
+                            Icons.receipt_long_rounded,
+                            color: Colors.white,
+                            size: _size.width / 8,
+                          ),
+                        ))),
                   ],
                 ),
               ),

@@ -6,4 +6,4 @@ const sampleMiniText = '''
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at urna aliquam mauris mattis facilisis. Suspendisse potenti. Suspendisse tristique rhoncus.
 ''';
 
-const lightCardColor = Colors.white;
+const kLightCardColor = Colors.white;

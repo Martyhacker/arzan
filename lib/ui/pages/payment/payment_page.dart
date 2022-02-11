@@ -1,8 +1,10 @@
 import 'package:arzan/core/constants/palette.dart';
-import 'package:arzan/ui/pages/add_card/add_card_page.dart';
+
 import 'package:flutter/material.dart';
+
 class PaymentPage extends StatefulWidget {
-  const PaymentPage({Key? key}) : super(key: key);
+  final Widget content;
+  const PaymentPage({Key? key, required this.content}) : super(key: key);
 
   @override
   _PaymentPageState createState() => _PaymentPageState();
@@ -32,21 +34,22 @@ class _PaymentPageState extends State<PaymentPage> {
                 child: Stack(
                   children: [
                     Container(
-                        width: _size.width,
-                        margin: EdgeInsets.only(
-                            left: 10,
-                            right: 10,
-                            top: _size.height / 4,
-                            bottom: 50),
-                        padding: EdgeInsets.only(
-                            top: _size.height / 10,
-                            left: 10,
-                            right: 10,
-                            bottom: 10),
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(20)),
-                        child: const AddCardPage()),
+                      width: _size.width,
+                      margin: EdgeInsets.only(
+                          left: 10,
+                          right: 10,
+                          top: _size.height / 4,
+                          bottom: 50),
+                      padding: EdgeInsets.only(
+                          top: _size.height / 10,
+                          left: 10,
+                          right: 10,
+                          bottom: 10),
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(20)),
+                      child: widget.content,
+                    ),
                     Positioned(
                       top: _size.height / 5,
                       left: 0,

@@ -17,8 +17,8 @@ class ContentRegionDropdown extends StatelessWidget {
             BoxShadow(color: Colors.grey, blurRadius: 5, spreadRadius: .5)
           ]),
       child: const ExpansionTile(
-        childrenPadding: const EdgeInsets.all(0),
-        tilePadding: const EdgeInsets.all(0),
+        childrenPadding:  EdgeInsets.all(0),
+        tilePadding:  EdgeInsets.all(0),
         iconColor: Colors.transparent,
         collapsedIconColor: Colors.transparent,
         children: [

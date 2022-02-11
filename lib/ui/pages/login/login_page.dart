@@ -1,6 +1,7 @@
 import 'package:arzan/core/constants/palette.dart';
 import 'package:arzan/core/style/my_box_decorations.dart';
 import 'package:arzan/core/style/my_input_decorations.dart';
+import 'package:arzan/core/style/my_paddings_margins.dart';
 import 'package:arzan/core/widgets/custom_button.dart';
 import 'package:arzan/core/widgets/default_app_bar.dart';
 import 'package:arzan/ui/pages/home/home_page.dart';
@@ -26,7 +27,7 @@ class _LoginPageState extends State<LoginPage> {
           padding: const EdgeInsets.all(10),
           child: Container(
             width: _size.width,
-            padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 50),
+            padding: context.eiSym(h: 25, v: 50),
             decoration: MyBoxDecs().registerPage(),
             child: Column(
               children: [

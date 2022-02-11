@@ -7,6 +7,14 @@ ThemeData darkTheme = ThemeData(
   primarySwatch: Colors.green,
   colorScheme: const ColorScheme.dark(),
   textTheme: const TextTheme(headline6: TextStyle(color: Colors.black)),
+  inputDecorationTheme: InputDecorationTheme(
+      focusColor: Colors.green,
+      border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: const BorderSide(color: Colors.transparent)),
+      enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: const BorderSide(color: Colors.transparent))),
 );
 
 ThemeData lightTheme = ThemeData(
@@ -19,7 +27,7 @@ ThemeData lightTheme = ThemeData(
           borderSide: const BorderSide(color: Colors.transparent)),
       enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
-          borderSide: const BorderSide(color: Colors.green))),
+          borderSide: const BorderSide(color: Colors.transparent))),
   colorScheme: const ColorScheme.light(),
   textTheme: const TextTheme(headline6: TextStyle(color: Colors.black)),
 );

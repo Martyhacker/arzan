@@ -1,5 +1,7 @@
 import 'package:arzan/core/constants/palette.dart';
+import 'package:arzan/core/utils/my_router.dart';
 import 'package:arzan/core/widgets/custom_button.dart';
+import 'package:arzan/ui/pages/add_content/add_content_page.dart';
 import 'package:arzan/ui/pages/payment/payment_components/pay_methods.dart';
 import 'package:flutter/material.dart';
 
@@ -48,7 +50,7 @@ class _FirstStepState extends State<FirstStep> {
               .toList(),
         ),
         const SizedBox(height: 20),
-        CustomButton(title: 'Next', color: Palette.kSoftGreen, onTap: () {})
+        CustomButton(title: 'Next', color: Palette.kSoftGreen, onTap: ()=>MyRouter().route(context, const AddContentPage()))
       ],
     );
   }

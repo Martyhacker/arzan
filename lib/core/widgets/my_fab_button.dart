@@ -8,20 +8,27 @@ class MyFabButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FloatingActionButton(
-      onPressed: onPressed,
-      child: Container(
-        decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [Palette.kSoftGreen, Palette.kHardGreen])),
-        child: Stack(
-          fit: StackFit.expand,
-          children: [
-            SvgPicture.asset('assets/icons/fi-rr-add.svg'),
-          ],
+    return Container(
+      height: 80,
+      width: 80,
+      margin: const EdgeInsets.all(5),
+      child: FloatingActionButton(
+        onPressed: onPressed,
+        mini: false,
+        
+        child: Container(
+          decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [Palette.kSoftGreen, Palette.kHardGreen])),
+          child: Stack(
+            fit: StackFit.expand,
+            children: [
+              SvgPicture.asset('assets/icons/fi-rr-add.svg'),
+            ],
+          ),
         ),
       ),
     );

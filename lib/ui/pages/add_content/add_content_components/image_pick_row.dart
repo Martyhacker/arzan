@@ -27,7 +27,7 @@ class _ImagePickingRowState extends State<ImagePickingRow> {
       //   setState(() => images.add(image[i]));
       // }
     } on PlatformException catch (e) {
-      print('Failed to pick image: ${e.toString()}');
+      Exception('Failed to pick image: ${e.toString()}');
     }
   }
 

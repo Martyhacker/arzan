@@ -2,6 +2,7 @@ import 'package:arzan/core/constants/palette.dart';
 import 'package:arzan/core/utils/my_router.dart';
 import 'package:arzan/ui/pages/about/about_page.dart';
 import 'package:arzan/ui/pages/contact/contact_page.dart';
+import 'package:arzan/ui/pages/payment/payment_components/first_step.dart';
 import 'package:arzan/ui/pages/payment/payment_page.dart';
 import 'package:arzan/ui/pages/settings/settings_page.dart';
 import 'package:auto_size_text/auto_size_text.dart';
@@ -43,7 +44,8 @@ class MyDrawer extends StatelessWidget {
             DrawerItem(
               title: 'Payment',
               icon: Icons.credit_card_rounded,
-              onTap: () => MyRouter().route(context, const PaymentPage()),
+              onTap: () => MyRouter()
+                  .route(context, const PaymentPage(content: FirstStep())),
             ),
             DrawerItem(
               title: 'Share',

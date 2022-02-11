@@ -1,12 +1,15 @@
 import 'package:arzan/core/constants/palette.dart';
 import 'package:arzan/core/style/my_box_decorations.dart';
 import 'package:arzan/core/style/my_input_decorations.dart';
+import 'package:arzan/core/utils/drawer_controller.dart';
 import 'package:arzan/core/utils/my_router.dart';
 import 'package:arzan/core/widgets/custom_button.dart';
 import 'package:arzan/core/widgets/default_app_bar.dart';
+import 'package:arzan/core/widgets/my_drawer.dart';
 import 'package:arzan/ui/pages/home/home_page.dart';
 import 'package:arzan/ui/pages/login/login_page.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({Key? key}) : super(key: key);
@@ -21,8 +24,10 @@ class _RegisterPageState extends State<RegisterPage> {
     Size _size = MediaQuery.of(context).size;
     bool isCheked = false;
     return Scaffold(
+      key: context.read<MenuController>().scaffoldKey,
       appBar: DefaultAppBar(
           titleText: 'Registration', back: const HomePage(), appBar: AppBar()),
+          drawer: MyDrawer(),
       body: SingleChildScrollView(
         child: Container(
           padding: const EdgeInsets.all(10),
