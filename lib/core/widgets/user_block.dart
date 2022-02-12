@@ -1,3 +1,4 @@
+import 'package:arzan/core/style/my_paddings_margins.dart';
 import 'package:arzan/core/utils/my_router.dart';
 import 'package:arzan/core/widgets/subscribe_button.dart';
 import 'package:arzan/core/widgets/user_circle.dart';
@@ -19,8 +20,8 @@ class _UserBlockState extends State<UserBlock> {
       onTap: () => MyRouter().route(context, const OfficialUserDetail()),
       child: Container(
         height: _size.height / 4,
-        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-        margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 10),
+        padding: context.eiAll(8),
+        margin: context.eiAll(5),
         decoration: BoxDecoration(
             color: Colors.white, borderRadius: BorderRadius.circular(15)),
         child: Column(

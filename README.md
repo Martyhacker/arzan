@@ -1,7 +1,6 @@
 # arzan
 
-A new Flutter project.
-
+ARZAN - is an e-Commerce app developed for iOS.
 ## Getting Started
 
 This project is a starting point for a Flutter application.

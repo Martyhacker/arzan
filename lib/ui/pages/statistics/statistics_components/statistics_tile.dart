@@ -23,15 +23,14 @@ class StatisticTile extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(),
+          SizedBox(),
           AutoSizeText(
             title,
+            textAlign: TextAlign.center,
             style: Theme.of(context)
                 .textTheme
                 .headline6!
                 .copyWith(fontWeight: FontWeight.normal),
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
           ),
           AutoSizeText(
             stats,
@@ -44,3 +43,34 @@ class StatisticTile extends StatelessWidget {
     );
   }
 }
+
+
+// DefaultTabController(
+//       length: _kTabs.length,
+//       child: Scaffold(
+//           appBar: AppBar(
+//             backgroundColor: Colors.white,
+//             title: const Text('My statistics',
+//                 style: TextStyle(color: Colors.black)),
+//             automaticallyImplyLeading: false,
+//             shape: const RoundedRectangleBorder(
+//               borderRadius: BorderRadius.only(
+//                 bottomLeft: Radius.circular(15),
+//                 bottomRight: Radius.circular(15),
+//               ),
+//             ),
+//             leading: IconButton(
+//               icon: Icon(Icons.chevron_left_rounded,
+//                   color: Palette.kSoftGreen, size: 40),
+//               onPressed: () => Navigator.pop(context),
+//             ),
+//             bottom: TabBar(
+//                 labelColor: Colors.black87,
+//                 unselectedLabelColor: Colors.grey,
+//                 indicatorWeight: 3,
+//                 indicatorSize: TabBarIndicatorSize.tab,
+//                 tabs: _kTabs),
+//           ),
+//           body: TabBarView(children: _kTabPages)),
+//     );
+//   }

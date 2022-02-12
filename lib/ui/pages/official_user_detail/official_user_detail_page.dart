@@ -1,12 +1,12 @@
 import 'package:arzan/core/constants/constants.dart';
 import 'package:arzan/core/constants/palette.dart';
-import 'package:arzan/core/style/my_box_decorations.dart';
 import 'package:arzan/core/style/my_paddings_margins.dart';
-import 'package:arzan/core/widgets/dialogs.dart';
+import 'package:arzan/core/widgets/default_app_bar.dart';
 import 'package:arzan/core/widgets/subscribe_button.dart';
-import 'package:auto_size_text/auto_size_text.dart';
+import 'package:arzan/core/widgets/upper_circle_logo.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class OfficialUserDetail extends StatefulWidget {
   const OfficialUserDetail({Key? key}) : super(key: key);
@@ -16,192 +16,81 @@ class OfficialUserDetail extends StatefulWidget {
 }
 
 class _OfficialUserDetailState extends State<OfficialUserDetail> {
+
   @override
   Widget build(BuildContext context) {
     Size _size = MediaQuery.of(context).size;
     return Scaffold(
+      appBar: DefaultAppBar(titleText: 'User', appBar: AppBar(), back: null,),
       body: SingleChildScrollView(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
+        child: Stack(
           children: [
-            Container(
-              margin: const EdgeInsets.only(
-                  left: 10, right: 10, top: 50, bottom: 25),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(10),
+            Positioned(
+              top: 0,
+              child: Image.asset(
+                'assets/images/background_percentage.png',
+                fit: BoxFit.cover,
+                width: _size.width,
+                height: _size.height / 3,
               ),
-              child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+            ),
+            SizedBox(
+              width: _size.width,
+              height: _size.height,
+              child: SingleChildScrollView(
+                child: Stack(
                   children: [
                     Container(
-                      decoration: MyBoxDecs().officialUserPage(),
+                      width: _size.width,
+                      margin: context.mTermsPage(),
+                      padding: EdgeInsets.only(top: MediaQuery.of(context).size.height / 12, left: 10, right: 10, bottom: 10),
+                      decoration: BoxDecoration(
+                          color: kLightCardColor,
+                          borderRadius: BorderRadius.circular(20)),
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Container(
-                            margin: const EdgeInsets.only(top: 10),
-                            padding: context.eiSym(h: 10, v: 0),
-                            child: Row(
-                              children: [
-                                IconButton(
-                                    onPressed: () => Navigator.pop(context),
-                                    icon:
-                                        const Icon(Icons.chevron_left_rounded),
-                                    color: Palette.kSoftGreen,
-                                    iconSize: 40),
-                                Container(
-                                  width: _size.width / 8,
-                                  padding: const EdgeInsets.all(3),
-                                  decoration: MyBoxDecs().officialUserDetailAvatar(),
-                                  child: LayoutBuilder(
-                                      builder: (context, constraint) {
-                                    return Icon(
-                                      Icons.account_circle_outlined,
-                                      color: Colors.white,
-                                      size: constraint.biggest.width,
-                                    );
-                                  }),
-                                ),
-                                const SizedBox(width: 15),
-                                const Text('Name Surname',
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.bold)),
-                                const Spacer(),
-                                const SubscribeButton()
-                              ],
-                            ),
-                          ),
-                          Stack(
-                            children: [
-                              Container(
-                                width: _size.width,
-                                height: _size.height / 3,
-                                margin: const EdgeInsets.all(10),
-                                color: Palette.kSoftGreen,
-                                child: const Icon(Icons.image,
-                                    color: Colors.white),
-                              ),
-                              Positioned(
-                                top: 20,
-                                right: 20,
-                                child: Container(
-                                  padding: context.eiAll(3),
-                                  decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.circular(5)),
-                                  child: const Icon(
-                                    Icons.bookmark_outline_rounded,
-                                    color: Colors.grey,
+                          Text('Administrator',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .headline6!
+                                  .copyWith(fontWeight: FontWeight.bold)),
+                                  Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Icon(Icons.location_on, color: Palette.kSoftGreen,),
+                                      Text('Asgabat', style: Theme.of(context).textTheme.subtitle1,)
+                                    ],
                                   ),
-                                ),
-                              )
-                            ],
-                          ),
-                          Container(
-                            padding: context.eiSym(h: 15, v: 10),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text('23 hrs ago',
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .bodyText1!
-                                        .copyWith(color: Colors.grey)),
-                                const VerticalDiv(),
-                                const StatsBlock(
-                                    icon: Icons.visibility_outlined,
-                                    data: '154'),
-                                const VerticalDiv(),
-                                const StatsBlock(
-                                    icon: Icons.share_outlined, data: '26'),
-                                const VerticalDiv(),
-                                const StatsBlock(
-                                    icon: Icons.favorite_border_rounded,
-                                    data: '62'),
-                              ],
-                            ),
-                          )
+                                  Container(
+                                    margin: context.eiSym(h: 0, v: 20),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        Text('12', style: Theme.of(context).textTheme.headline5!.copyWith(fontWeight: FontWeight.bold),),
+                                        Text('SUBSCRIBERS', style: Theme.of(context).textTheme.bodyText1!.copyWith(color: Colors.grey),)
+                                      ],
+                                    )),
+                          const SizedBox(height: 25),
+                          const SubscribeButton()
+                           
                         ],
                       ),
                     ),
-                    Container(
-                      padding: context.eiSym(h: 15, v: 0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const SizedBox(height: 20),
-                          AutoSizeText('Lorem ipsum dolor sit amet',
-                              textAlign: TextAlign.left,
-                              style: Theme.of(context).textTheme.bodyText1),
-                          const SizedBox(height: 20),
-                          const AutoSizeText(sampleRichText,
-                              textAlign: TextAlign.left),
-                        ],
-                      ),
-                    ),
-                  ]),
-            ),
-            InkWell(
-              onTap: () {
-                showDialog(
-                    context: context, builder: (context) => banUserDialog(context));
-              },
-              child: Container(
-                margin: const EdgeInsets.only(bottom: 50),
-                padding: context.eiAll(15),
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(10),
-                    boxShadow: const [
-                      BoxShadow(
-                          color: Colors.grey, spreadRadius: .1, blurRadius: 5)
-                    ]),
-                child: const Text('Nagilelik bildirmek',
-                    style: TextStyle(
-                        color: Colors.red, fontWeight: FontWeight.bold)),
+                    Positioned(
+                      top: _size.height / 5,
+                      left: 0,
+                      right: 0,
+                      child: UpperCircleLogo(child: Image.asset('assets/images/logo_ticket.png',
+              width: 10, height: 10),),
+                    )
+                  ],
+                ),
               ),
             )
           ],
         ),
       ),
-    );
-  }
-}
-
-class VerticalDiv extends StatelessWidget {
-  const VerticalDiv({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-        width: 1,
-        height: 25,
-        decoration: const BoxDecoration(color: Colors.grey));
-  }
-}
-
-class StatsBlock extends StatelessWidget {
-  final IconData icon;
-  final String data;
-  const StatsBlock({Key? key, required this.icon, required this.data})
-      : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Icon(icon, color: Colors.grey),
-        Text(
-          data,
-          style: Theme.of(context)
-              .textTheme
-              .bodyText1!
-              .copyWith(color: Colors.grey),
-        ),
-      ],
     );
   }
 }

@@ -74,10 +74,15 @@ class MyBoxDecs {
       color: Colors.white,
       borderRadius: BorderRadius.circular(10),
       boxShadow: defaultShadow());
-  officialUserPage() => BoxDecoration(
+  officialUserPage() => const BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.circular(10),
-          boxShadow: const [
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(10),
+            topRight: Radius.circular(10),
+            bottomLeft: Radius.circular(30),
+            bottomRight: Radius.circular(30)
+          ),
+          boxShadow:  [
             BoxShadow(
                 color: Colors.grey,
                 spreadRadius: .1,

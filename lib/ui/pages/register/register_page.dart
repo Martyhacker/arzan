@@ -21,27 +21,27 @@ class RegisterPage extends StatefulWidget {
 
 class _RegisterPageState extends State<RegisterPage> {
   final mid = MyInputDecs();
+  final mbd = MyBoxDecs();
   @override
   Widget build(BuildContext context) {
     Size _size = MediaQuery.of(context).size;
-    bool isCheked = false;
     return Scaffold(
       key: context.read<MenuController>().scaffoldKey,
       appBar: DefaultAppBar(
           titleText: 'Registration', back: const HomePage(), appBar: AppBar()),
-          drawer: const MyDrawer(),
+      drawer: const MyDrawer(),
       body: SingleChildScrollView(
         child: Container(
           padding: context.eiAll(10),
           child: Container(
             width: _size.width,
             padding: context.eiSym(h: 25, v: 50),
-            decoration: MyBoxDecs().registerPage(),
+            decoration: mbd.registerPage(),
             child: Column(
               children: [
                 Container(
                   padding: context.eiAll(5),
-                  decoration: MyBoxDecs().registerPage2(),
+                  decoration: mbd.registerPage2(),
                   child: FittedBox(
                       child: Icon(
                     Icons.account_circle_outlined,
@@ -53,30 +53,20 @@ class _RegisterPageState extends State<RegisterPage> {
                 Form(
                     child: Column(
                   children: [
+                    TextFormField(decoration: mid.username()),
+                    const SizedBox(height: 20),
                     TextFormField(
                         maxLength: 8,
                         keyboardType: TextInputType.number,
                         decoration: mid.telephone()),
-                    const SizedBox(height: 25),
+                    const SizedBox(height: 20),
                     TextFormField(
-                        obscureText: true,
-                        decoration: mid.password()),
-                    const SizedBox(height: 25),
+                        obscureText: true, decoration: mid.password()),
+                    const SizedBox(height: 20),
                     TextFormField(
-                        obscureText: true,
-                        decoration: mid.confirmPassword()),
+                        obscureText: true, decoration: mid.confirmPassword()),
                   ],
                 )),
-                const SizedBox(height: 25),
-                Row(
-                  children: [
-                    Checkbox(
-                        value: isCheked,
-                        onChanged: (value) =>
-                            setState(() => isCheked = value!)),
-                    const Text('Lorem ipsum dolor sit amet asq qwert')
-                  ],
-                ),
                 const SizedBox(height: 25),
                 CustomButton(
                     title: 'Register', color: Palette.kSoftGreen, onTap: () {}),
