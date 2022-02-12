@@ -1,4 +1,5 @@
 import 'package:arzan/core/constants/palette.dart';
+import 'package:arzan/core/style/my_shape_decoration.dart';
 import 'package:flutter/material.dart';
 
 import 'statistics_components/statistics_table.dart';
@@ -23,12 +24,7 @@ class _MyStatisticsPageState extends State<MyStatisticsPage> {
             title: const Text('My statistics',
                 style: TextStyle(color: Colors.black)),
             automaticallyImplyLeading: false,
-            shape: const RoundedRectangleBorder(
-              borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(15),
-                bottomRight: Radius.circular(15),
-              ),
-            ),
+            shape: myShapeDecoration(),
             leading: IconButton(
               icon: Icon(Icons.chevron_left_rounded,
                   color: Palette.kSoftGreen, size: 40),

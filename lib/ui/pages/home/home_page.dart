@@ -1,4 +1,7 @@
 import 'package:arzan/core/constants/palette.dart';
+import 'package:arzan/core/style/my_box_decorations.dart';
+import 'package:arzan/core/style/my_paddings_margins.dart';
+import 'package:arzan/core/style/my_shape_decoration.dart';
 import 'package:arzan/core/utils/drawer_controller.dart';
 import 'package:arzan/core/utils/my_router.dart';
 import 'package:arzan/core/utils/view_builder.dart';
@@ -46,11 +49,7 @@ class _HomePageState extends State<HomePage> {
               floating: false,
               pinned: true,
               primary: true,
-              shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(25),
-                bottomRight: Radius.circular(25),
-              )),
+              shape: myShapeDecoration(),
               flexibleSpace: FlexibleSpaceBar(
                   collapseMode: CollapseMode.pin,
                   stretchModes: const [StretchMode.blurBackground],
@@ -83,20 +82,9 @@ class _HomePageState extends State<HomePage> {
                             Expanded(
                               flex: 4,
                               child: Container(
-                                  padding:
-                                      const EdgeInsets.symmetric(vertical: 6),
-                                  margin:
-                                      const EdgeInsets.symmetric(horizontal: 6),
-                                  decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.circular(10),
-                                      border: Border.all(color: Colors.grey),
-                                      boxShadow: const [
-                                        BoxShadow(
-                                            color: Colors.grey,
-                                            spreadRadius: .2,
-                                            blurRadius: 2)
-                                      ]),
+                                  padding: context.eiSym(h: 0, v: 6),
+                                  margin: context.eiSym(h: 6, v: 0),
+                                  decoration: MyBoxDecs().homePageCity(),
                                   child: Text('Asgabat',
                                       textAlign: TextAlign.center,
                                       style: Theme.of(context)
@@ -130,7 +118,7 @@ class _HomePageState extends State<HomePage> {
             ),
             SliverToBoxAdapter(
               child: Container(
-                padding: const EdgeInsets.symmetric(vertical: 20),
+                padding: context.eiSym(h: 0, v: 20),
                 child: Column(mainAxisSize: MainAxisSize.min, children: [
                   //const HomeViewLabel(),
                   Row(

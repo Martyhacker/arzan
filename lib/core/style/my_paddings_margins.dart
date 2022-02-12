@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 extension EIExtension on BuildContext {
-  eiAll(val) => EdgeInsets.all(val);
+  eiAll(double val) => EdgeInsets.all(val);
   eiSym({required double h,required double v}) =>EdgeInsets.symmetric(horizontal: h, vertical: v);
   mTermsPage() => EdgeInsets.only(
       left: 10,

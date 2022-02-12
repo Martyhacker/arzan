@@ -1,5 +1,7 @@
+import 'package:arzan/core/constants/constants.dart';
 import 'package:arzan/core/models/city_model.dart';
 import 'package:arzan/core/style/my_box_decorations.dart';
+import 'package:arzan/core/style/my_paddings_margins.dart';
 import 'package:arzan/core/utils/my_router.dart';
 import 'package:arzan/ui/pages/main/main_page.dart';
 import 'package:auto_size_text/auto_size_text.dart';
@@ -17,7 +19,7 @@ class _SelectRegionPageState extends State<SelectRegionPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
+          padding: context.eiSym(h: 20, v: 0),
           decoration: MyBoxDecs().gradientBack(),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -57,11 +59,11 @@ class CityButton extends StatelessWidget {
   Widget build(BuildContext context) => InkWell(
         onTap: ()=> MyRouter().route(context, const TabScreen()),
         child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+          padding: context.eiSym(h: 30, v: 10),
           margin: const EdgeInsets.only(bottom: 10, left: 25, right: 25),
           width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
-              color: Colors.white, borderRadius: BorderRadius.circular(50)),
+              color: kLightCardColor, borderRadius: BorderRadius.circular(50)),
           child: Text(
             model.name,
             textAlign: TextAlign.center,

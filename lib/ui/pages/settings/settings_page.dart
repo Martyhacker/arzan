@@ -1,5 +1,7 @@
 import 'package:arzan/core/constants/palette.dart';
 import 'package:arzan/core/provider/theme_provider.dart';
+import 'package:arzan/core/style/my_paddings_margins.dart';
+import 'package:arzan/core/style/my_shape_decoration.dart';
 import 'package:arzan/core/utils/my_router.dart';
 import 'package:arzan/ui/pages/terms/terms_page.dart';
 import 'package:flutter/cupertino.dart';
@@ -27,12 +29,7 @@ class _SettingsPageState extends State<SettingsPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.only(
-            bottomLeft: Radius.circular(10),
-            bottomRight: Radius.circular(10),
-          ),
-        ),
+        shape: myShapeDecoration(),
         automaticallyImplyLeading: false,
         title: const Text(
           'Settings',
@@ -44,8 +41,8 @@ class _SettingsPageState extends State<SettingsPage> {
             onPressed: () => Navigator.pop(context)),
       ),
       body: Container(
-        margin: const EdgeInsets.all(10),
-        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+        margin: context.eiAll(10),
+        padding: context.eiSym(h: 10, v: 15),
         decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(10),

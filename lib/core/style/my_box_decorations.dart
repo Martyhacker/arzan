@@ -61,11 +61,35 @@ class MyBoxDecs {
       color: lightCardColor,
       borderRadius: defaultBorderRadius,
       boxShadow: defaultShadow());
+  homePageCity() => BoxDecoration(
+      color: Colors.white,
+      borderRadius: BorderRadius.circular(10),
+      border: Border.all(color: Colors.grey),
+      boxShadow: defaultShadow());
   notificationsPage() => BoxDecoration(
       color: lightCardColor,
       borderRadius: defaultBorderRadius,
       boxShadow: defaultShadow());
-
+  notificationDetailImage() => BoxDecoration(
+      color: Colors.white,
+      borderRadius: BorderRadius.circular(10),
+      boxShadow: defaultShadow());
+  officialUserPage() => BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(10),
+          boxShadow: const [
+            BoxShadow(
+                color: Colors.grey,
+                spreadRadius: .1,
+                blurRadius: 5,
+                offset: Offset(0, 5))
+          ]);
+  officialUserDetailAvatar() => BoxDecoration(
+      shape: BoxShape.circle,
+      gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [Palette.kSoftGreen, Palette.kHardGreen]));
   registerPage() => BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(10),

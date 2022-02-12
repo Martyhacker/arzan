@@ -1,5 +1,6 @@
 import 'package:arzan/core/constants/constants.dart';
 import 'package:arzan/core/constants/palette.dart';
+import 'package:arzan/core/style/my_box_decorations.dart';
 import 'package:arzan/core/widgets/default_app_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -34,16 +35,7 @@ class _NotificationDetailPageState extends State<NotificationDetailPage> {
                     width: _size.width,
                     height: _size.height / 3,
                     padding: const EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10),
-                        boxShadow: const [
-                          BoxShadow(
-                              color: Colors.grey,
-                              blurRadius: 2,
-                              spreadRadius: .5,
-                              offset: Offset.zero)
-                        ]),
+                    decoration: MyBoxDecs().notificationDetailImage(),
                     child: Container(
                       decoration: BoxDecoration(color: Palette.kSoftGreen),
                       child: const Icon(Icons.image),

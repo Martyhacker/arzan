@@ -1,5 +1,7 @@
 import 'package:arzan/core/constants/constants.dart';
 import 'package:arzan/core/constants/palette.dart';
+import 'package:arzan/core/style/my_box_decorations.dart';
+import 'package:arzan/core/style/my_paddings_margins.dart';
 import 'package:arzan/core/widgets/dialogs.dart';
 import 'package:arzan/core/widgets/subscribe_button.dart';
 import 'package:auto_size_text/auto_size_text.dart';
@@ -33,22 +35,13 @@ class _OfficialUserDetailState extends State<OfficialUserDetail> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10),
-                          boxShadow: const [
-                            BoxShadow(
-                                color: Colors.grey,
-                                spreadRadius: .1,
-                                blurRadius: 5,
-                                offset: Offset(0, 5))
-                          ]),
+                      decoration: MyBoxDecs().officialUserPage(),
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Container(
                             margin: const EdgeInsets.only(top: 10),
-                            padding: const EdgeInsets.symmetric(horizontal: 10),
+                            padding: context.eiSym(h: 10, v: 0),
                             child: Row(
                               children: [
                                 IconButton(
@@ -60,15 +53,7 @@ class _OfficialUserDetailState extends State<OfficialUserDetail> {
                                 Container(
                                   width: _size.width / 8,
                                   padding: const EdgeInsets.all(3),
-                                  decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      gradient: LinearGradient(
-                                          begin: Alignment.topCenter,
-                                          end: Alignment.bottomCenter,
-                                          colors: [
-                                            Palette.kSoftGreen,
-                                            Palette.kHardGreen
-                                          ])),
+                                  decoration: MyBoxDecs().officialUserDetailAvatar(),
                                   child: LayoutBuilder(
                                       builder: (context, constraint) {
                                     return Icon(
@@ -101,7 +86,7 @@ class _OfficialUserDetailState extends State<OfficialUserDetail> {
                                 top: 20,
                                 right: 20,
                                 child: Container(
-                                  padding: const EdgeInsets.all(3),
+                                  padding: context.eiAll(3),
                                   decoration: BoxDecoration(
                                       color: Colors.white,
                                       borderRadius: BorderRadius.circular(5)),
@@ -114,8 +99,7 @@ class _OfficialUserDetailState extends State<OfficialUserDetail> {
                             ],
                           ),
                           Container(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 15, vertical: 10),
+                            padding: context.eiSym(h: 15, v: 10),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
@@ -142,7 +126,7 @@ class _OfficialUserDetailState extends State<OfficialUserDetail> {
                       ),
                     ),
                     Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 15),
+                      padding: context.eiSym(h: 15, v: 0),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -165,7 +149,7 @@ class _OfficialUserDetailState extends State<OfficialUserDetail> {
               },
               child: Container(
                 margin: const EdgeInsets.only(bottom: 50),
-                padding: const EdgeInsets.all(15),
+                padding: context.eiAll(15),
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(10),

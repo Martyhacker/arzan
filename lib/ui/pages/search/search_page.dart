@@ -1,3 +1,4 @@
+import 'package:arzan/core/style/my_shape_decoration.dart';
 import 'package:arzan/core/utils/drawer_controller.dart';
 import 'package:arzan/core/utils/my_router.dart';
 import 'package:arzan/core/utils/view_builder.dart';
@@ -64,12 +65,7 @@ class _SearchPageState extends State<SearchPage> with TickerProviderStateMixin {
             title: const SearchBar(),
             actions: [ViewTogglerButton(view: currentTab)],
             automaticallyImplyLeading: false,
-            shape: const RoundedRectangleBorder(
-              borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(15),
-                bottomRight: Radius.circular(15),
-              ),
-            ),
+            shape: myShapeDecoration(),
             leading: IconButton(
               icon: Icon(Icons.chevron_left_rounded,
                   color: Palette.kSoftGreen, size: 40),

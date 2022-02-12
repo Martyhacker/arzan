@@ -15,6 +15,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final mid = MyInputDecs();
   @override
   Widget build(BuildContext context) {
     Size _size = MediaQuery.of(context).size;
@@ -24,7 +25,7 @@ class _LoginPageState extends State<LoginPage> {
           titleText: 'Registration', back: const HomePage(), appBar: AppBar()),
       body: SingleChildScrollView(
         child: Container(
-          padding: const EdgeInsets.all(10),
+          padding: context.eiAll(10),
           child: Container(
             width: _size.width,
             padding: context.eiSym(h: 25, v: 50),
@@ -32,7 +33,7 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               children: [
                 Container(
-                  padding: const EdgeInsets.all(5),
+                  padding: context.eiAll(5),
                   decoration: MyBoxDecs().registerPage2(),
                   child: FittedBox(
                       child: Icon(
@@ -48,13 +49,13 @@ class _LoginPageState extends State<LoginPage> {
                     TextFormField(
                         maxLength: 8,
                         keyboardType: TextInputType.number,
-                        decoration: MyInputDecs().telephone()),
+                        decoration: mid.telephone()),
                     const SizedBox(height: 25),
                     TextFormField(
                         obscureText: true,
-                        decoration: MyInputDecs().password()),
+                        decoration: mid.password()),
                     Container(
-                      margin: const EdgeInsets.symmetric(vertical: 10),
+                      margin: context.eiSym(h: 0, v: 10),
                       child: Text('Forgot password?',
                           style: Theme.of(context)
                               .textTheme

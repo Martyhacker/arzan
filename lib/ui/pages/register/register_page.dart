@@ -1,6 +1,7 @@
 import 'package:arzan/core/constants/palette.dart';
 import 'package:arzan/core/style/my_box_decorations.dart';
 import 'package:arzan/core/style/my_input_decorations.dart';
+import 'package:arzan/core/style/my_paddings_margins.dart';
 import 'package:arzan/core/utils/drawer_controller.dart';
 import 'package:arzan/core/utils/my_router.dart';
 import 'package:arzan/core/widgets/custom_button.dart';
@@ -19,6 +20,7 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
+  final mid = MyInputDecs();
   @override
   Widget build(BuildContext context) {
     Size _size = MediaQuery.of(context).size;
@@ -27,18 +29,18 @@ class _RegisterPageState extends State<RegisterPage> {
       key: context.read<MenuController>().scaffoldKey,
       appBar: DefaultAppBar(
           titleText: 'Registration', back: const HomePage(), appBar: AppBar()),
-          drawer: MyDrawer(),
+          drawer: const MyDrawer(),
       body: SingleChildScrollView(
         child: Container(
-          padding: const EdgeInsets.all(10),
+          padding: context.eiAll(10),
           child: Container(
             width: _size.width,
-            padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 50),
+            padding: context.eiSym(h: 25, v: 50),
             decoration: MyBoxDecs().registerPage(),
             child: Column(
               children: [
                 Container(
-                  padding: const EdgeInsets.all(5),
+                  padding: context.eiAll(5),
                   decoration: MyBoxDecs().registerPage2(),
                   child: FittedBox(
                       child: Icon(
@@ -54,15 +56,15 @@ class _RegisterPageState extends State<RegisterPage> {
                     TextFormField(
                         maxLength: 8,
                         keyboardType: TextInputType.number,
-                        decoration: MyInputDecs().telephone()),
+                        decoration: mid.telephone()),
                     const SizedBox(height: 25),
                     TextFormField(
                         obscureText: true,
-                        decoration: MyInputDecs().password()),
+                        decoration: mid.password()),
                     const SizedBox(height: 25),
                     TextFormField(
                         obscureText: true,
-                        decoration: MyInputDecs().confirmPassword()),
+                        decoration: mid.confirmPassword()),
                   ],
                 )),
                 const SizedBox(height: 25),
@@ -81,7 +83,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 InkWell(
                   onTap: () => MyRouter().change(context, const LoginPage()),
                   child: Container(
-                    margin: const EdgeInsets.symmetric(vertical: 10),
+                    margin: context.eiSym(h: 0, v: 10),
                     child: Text('Don\'t have an account?',
                         style: Theme.of(context)
                             .textTheme

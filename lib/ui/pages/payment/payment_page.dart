@@ -1,4 +1,5 @@
 import 'package:arzan/core/constants/palette.dart';
+import 'package:arzan/core/style/my_paddings_margins.dart';
 
 import 'package:flutter/material.dart';
 
@@ -56,11 +57,11 @@ class _PaymentPageState extends State<PaymentPage> {
                       right: 0,
                       child: Container(
                         height: _size.height / 8,
-                        padding: const EdgeInsets.all(10),
+                        padding: context.eiAll(10),
                         decoration: const BoxDecoration(
                             color: Colors.white, shape: BoxShape.circle),
                         child: Container(
-                            padding: const EdgeInsets.all(20),
+                            padding: context.eiAll(20),
                             decoration: BoxDecoration(
                                 shape: BoxShape.circle,
                                 gradient: LinearGradient(

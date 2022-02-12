@@ -1,4 +1,5 @@
 import 'package:arzan/core/style/my_box_decorations.dart';
+import 'package:arzan/core/style/my_paddings_margins.dart';
 import 'package:arzan/core/utils/my_router.dart';
 import 'package:arzan/ui/pages/regions/select_region_page.dart';
 import 'package:auto_size_text/auto_size_text.dart';
@@ -23,7 +24,7 @@ class _SplashPageState extends State<SplashPage> {
       body: InkWell(
         onTap: () => MyRouter().route(context, const SelectRegionPage()),
         child: AnimatedContainer(
-            padding: const EdgeInsets.symmetric(horizontal: 50),
+            padding: context.eiSym(h: 50, v: 0),
             width: _width,
             height: _height,
             duration: const Duration(seconds: 5),

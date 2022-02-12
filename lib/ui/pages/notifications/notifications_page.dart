@@ -1,3 +1,4 @@
+import 'package:arzan/core/style/my_paddings_margins.dart';
 import 'package:arzan/core/utils/my_router.dart';
 import 'package:arzan/core/widgets/default_app_bar.dart';
 import 'package:arzan/ui/pages/home/home_components/tile_card.dart';
@@ -35,7 +36,7 @@ class _NotificationsPageState extends State<NotificationsPage> {
                   child: SizedBox(
                     width: _size.width,
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      padding: context.eiSym(h: 20, v: 0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [

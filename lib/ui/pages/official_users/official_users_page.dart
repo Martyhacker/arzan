@@ -1,5 +1,6 @@
 import 'package:arzan/core/constants/palette.dart';
 import 'package:arzan/core/style/my_box_decorations.dart';
+import 'package:arzan/core/style/my_paddings_margins.dart';
 import 'package:arzan/core/utils/view_builder.dart';
 import 'package:arzan/core/views/official_view.dart';
 import 'package:arzan/core/widgets/default_app_bar.dart';
@@ -40,7 +41,7 @@ class _OfficialUsersPageState extends State<OfficialUsersPage> {
                 child: SizedBox(
                   width: _size.width,
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 15),
+                    padding: context.eiSym(h: 15, v: 0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -77,7 +78,7 @@ class OfficialTogglerButton extends StatelessWidget {
       highlightColor: Colors.transparent,
       splashColor: Colors.transparent,
       child: Container(
-        padding: const EdgeInsets.all(5),
+        padding: context.eiAll(5),
         decoration: MyBoxDecs().notificationsPage(),
         child: Icon(
             userView.viewType == 'tile'
