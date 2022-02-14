@@ -9,13 +9,11 @@ class MyFabButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 80,
-      width: 80,
+      height: 70,
+      width: 70,
       margin: const EdgeInsets.all(5),
       child: FloatingActionButton(
-        onPressed: onPressed,
-        mini: false,
-        
+        onPressed: onPressed,        
         child: Container(
           decoration: BoxDecoration(
               shape: BoxShape.circle,

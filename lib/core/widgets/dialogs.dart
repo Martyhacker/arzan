@@ -36,7 +36,7 @@ banUserDialog(BuildContext context) => AlertDialog(
                 onTap: () {
                   Navigator.pop(context);
                   showDialog(
-                      context: context, builder: (context) => successDialog());
+                      context: context, builder: (context) => noInternetDialog());
                 })
           ],
         ),
@@ -47,7 +47,25 @@ successDialog() => AlertDialog(
       content: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Image.asset('assets/images/fi-rr-thumbs-up.png'),
+          Icon(
+            Icons.thumb_up_alt_rounded,
+            size: 60,
+            color: Palette.kSoftGreen,
+          ),
+          const Text(sampleMiniText, textAlign: TextAlign.center)
+        ],
+      ),
+    );
+noInternetDialog() => AlertDialog(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+      content: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(
+            Icons.signal_wifi_off_rounded,
+            size: 60,
+            color: Palette.kSoftGreen,
+          ),
           const Text(sampleMiniText, textAlign: TextAlign.center)
         ],
       ),
