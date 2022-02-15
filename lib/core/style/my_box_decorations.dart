@@ -35,9 +35,9 @@ class MyBoxDecs {
         borderRadius: defaultBorderRadius,
         color: Palette.kSoftGreen,
       );
-  rcmCardLabel() => const BoxDecoration(
-      color: Colors.grey,
-      borderRadius: BorderRadius.only(
+  rcmCardLabel() =>  BoxDecoration(
+      color: Colors.grey.withOpacity(.8),
+      borderRadius: const BorderRadius.only(
         bottomLeft: Radius.circular(10),
         bottomRight: Radius.circular(10),
       ));

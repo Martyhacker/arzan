@@ -1,3 +1,5 @@
+import 'dart:convert';
+import 'package:arzan/core/api/models/post_model.dart';
 import 'package:arzan/core/constants/constants.dart';
 import 'package:arzan/core/constants/palette.dart';
 import 'package:arzan/core/style/my_box_decorations.dart';
@@ -10,7 +12,8 @@ import 'post_detail_components/stats_block.dart';
 import 'post_detail_components/vertical_divider.dart';
 
 class PostDetailPage extends StatefulWidget {
-  const PostDetailPage({Key? key}) : super(key: key);
+  final PostModel model;
+  const PostDetailPage({Key? key, required this.model}) : super(key: key);
 
   @override
   _PostDetailPageState createState() => _PostDetailPageState();
@@ -52,9 +55,9 @@ class _PostDetailPageState extends State<PostDetailPage> {
                                     color: Palette.kSoftGreen,
                                     iconSize: 40),
                                 const SizedBox(width: 15),
-                                const Text('Name Surname',
+                                 Text(widget.model.title,
                                     style:
-                                        TextStyle(fontWeight: FontWeight.bold)),
+                                        const TextStyle(fontWeight: FontWeight.bold)),
                                 const Spacer(),
                                 IconButton(
                                   onPressed: () {},
@@ -69,30 +72,31 @@ class _PostDetailPageState extends State<PostDetailPage> {
                             width: _size.width,
                             height: _size.height / 3,
                             margin: context.eiAll(10),
-                            color: Palette.kSoftGreen,
-                            child: const Icon(Icons.image, color: Colors.white),
+                            decoration: BoxDecoration(
+                              image: DecorationImage(image: NetworkImage('https://arzan.info:3021/api'+jsonDecode(widget.model.images)[0]))
+                            ),
                           ),
                           Container(
                             padding: context.eiSym(h: 15, v: 10),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text('23 hrs ago',
+                                Text(widget.model.updatedAt,
                                     style: Theme.of(context)
                                         .textTheme
                                         .bodyText1!
                                         .copyWith(color: Colors.grey)),
                                 const VerticalDiv(),
-                                const StatsBlock(
+                                 StatsBlock(
                                     icon: Icons.visibility_outlined,
-                                    data: '154'),
+                                    data: widget.model.viewCount.toString()),
                                 const VerticalDiv(),
-                                const StatsBlock(
-                                    icon: Icons.share_outlined, data: '26'),
+                                 StatsBlock(
+                                    icon: Icons.share_outlined, data: widget.model.shareCount.toString()),
                                 const VerticalDiv(),
-                                const StatsBlock(
+                                 StatsBlock(
                                     icon: Icons.favorite_border_rounded,
-                                    data: '62'),
+                                    data: widget.model.favoriteCount.toString()),
                               ],
                             ),
                           )
@@ -109,8 +113,9 @@ class _PostDetailPageState extends State<PostDetailPage> {
                               textAlign: TextAlign.left,
                               style: Theme.of(context).textTheme.bodyText1),
                           const SizedBox(height: 20),
-                          const AutoSizeText(sampleRichText,
-                              textAlign: TextAlign.left),
+                          
+                          //  AutoSizeText(widget.model.content,
+                          //     textAlign: TextAlign.left),
                         ],
                       ),
                     ),

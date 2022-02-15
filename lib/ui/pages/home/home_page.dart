@@ -1,3 +1,4 @@
+import 'package:arzan/core/api/services/post_service.dart';
 import 'package:arzan/core/constants/palette.dart';
 import 'package:arzan/core/style/my_box_decorations.dart';
 import 'package:arzan/core/style/my_paddings_margins.dart';
@@ -36,6 +37,7 @@ class _HomePageState extends State<HomePage> {
     Size _size = MediaQuery.of(context).size;
     MyViewBuilder viewBuilder = MyViewBuilder();
     HomeView viewProvider = Provider.of<HomeView>(context);
+    Future futureRecommended = PostService().fetchDiscounts(limit: 3);
     return SafeArea(
       child: Scaffold(
         backgroundColor: Palette.kGrey,
@@ -121,18 +123,24 @@ class _HomePageState extends State<HomePage> {
               child: Container(
                 padding: context.eiSym(h: 0, v: 20),
                 child: Column(mainAxisSize: MainAxisSize.min, children: [
-                  //const HomeViewLabel(),
-                  Row(
-                    children: const [
-                      Expanded(child: HomeRecommendedCard()),
-                      Expanded(child: HomeRecommendedCard()),
-                      Expanded(child: HomeRecommendedCard())
-                    ],
+                  FutureBuilder<dynamic>(
+                    future: futureRecommended,
+                    builder: (context, snap){
+                      if(snap.hasData){
+                        return Row(
+                          children: List.generate(3, (index) => Expanded(child: HomeRecommendedCard(model: snap.data[index]))),
+                        );
+                      }
+                      else{
+                        return const Text('Oh no');
+                      }
+                    },
                   ),
                   const ViewAllButton(),
                   //const HomeViewLabel(),
                   viewProvider.viewType == 'tile'
-                      ? viewBuilder.homeTileView(HomeTile(onTap: () =>MyRouter().route(context, const PostDetailPage())))
+                      ? viewBuilder.homeTileView(HomeTile(
+                          onTap: () {}))
                       : viewProvider.viewType == 'block'
                           ? viewBuilder.homeGridView(const HomeBlock())
                           : viewBuilder.homeTileView(const HomeBigCard())

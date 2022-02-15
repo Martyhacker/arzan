@@ -12,7 +12,7 @@ class HomeBigCard extends StatelessWidget {
     Size _size = MediaQuery.of(context).size;
     MyBoxDecs mbd = MyBoxDecs();
     return InkWell(
-      onTap: ()=>MyRouter().route(context, const PostDetailPage()),
+      onTap: (){},
       child: Stack(
         children: [
           Container(
