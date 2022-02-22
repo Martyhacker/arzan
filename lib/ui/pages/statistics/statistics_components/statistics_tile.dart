@@ -23,7 +23,7 @@ class StatisticTile extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(),
+          const SizedBox(),
           AutoSizeText(
             title,
             textAlign: TextAlign.center,

@@ -5,7 +5,7 @@ import 'package:arzan/core/api/routes.dart';
 import 'package:http/http.dart' as http;
 
 class PostService {
-  fetchDiscounts({required int limit}) async {
+  Future<List<PostModel>?>fetchDiscounts({required int limit}) async {
     var response =
         await http.get(Uri.https(Routes.api, Routes.version+ Routes.postsAll, {"categoryId": "1", "limit":"$limit"}));
     if (response.statusCode == 200) {
@@ -27,7 +27,7 @@ class PostService {
       }
       return discounts;
     } else {
-      return Exception('Post getting error');
+      return null;
     }
   }
 }

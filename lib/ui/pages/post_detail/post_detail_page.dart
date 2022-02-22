@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'package:arzan/core/api/models/post_model.dart';
-import 'package:arzan/core/constants/constants.dart';
 import 'package:arzan/core/constants/palette.dart';
 import 'package:arzan/core/style/my_box_decorations.dart';
 import 'package:arzan/core/style/my_paddings_margins.dart';
@@ -109,7 +108,7 @@ class _PostDetailPageState extends State<PostDetailPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           const SizedBox(height: 20),
-                          AutoSizeText('Lorem ipsum dolor sit amet',
+                          AutoSizeText(widget.model.content,
                               textAlign: TextAlign.left,
                               style: Theme.of(context).textTheme.bodyText1),
                           const SizedBox(height: 20),

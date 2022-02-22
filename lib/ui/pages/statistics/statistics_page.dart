@@ -1,4 +1,3 @@
-import 'package:arzan/core/constants/constants.dart';
 import 'package:arzan/core/constants/palette.dart';
 import 'package:arzan/core/style/my_paddings_margins.dart';
 import 'package:arzan/core/style/my_shape_decoration.dart';
@@ -6,8 +5,6 @@ import 'package:arzan/ui/pages/statistics/statistics_components/statistics_tile.
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/widgets.dart';
-
-import 'statistics_components/statistics_table.dart';
 
 int currentTab = 0;
 
@@ -32,9 +29,9 @@ class _MyStatisticsPageState extends State<MyStatisticsPage>
 
   @override
   Widget build(BuildContext context) {
-    Size _size = MediaQuery.of(context).size;
-    final _kTabPages = [const StatisticsTable(), const StatisticsTable()];
-    final _kTabs = [const Tab(text: "Week"), const Tab(text: "Month")];
+    // Size _size = MediaQuery.of(context).size;
+    // final _kTabPages = [const StatisticsTable(), const StatisticsTable()];
+    // final _kTabs = [const Tab(text: "Week"), const Tab(text: "Month")];
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,

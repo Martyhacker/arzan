@@ -61,9 +61,10 @@ class _MyCarouselState extends State<MyCarousel> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: List.generate(
               carouselImages.length,
-              (index) => Container(
-                    height: 6,
-                    width: 6,
+              (index) => AnimatedContainer(
+                duration: const Duration(milliseconds: 400),
+                    height: _current == index ?10:6,
+                    width: _current == index ?10:6,
                     margin:
                         const EdgeInsets.symmetric(vertical: 8, horizontal: 4),
                     decoration: BoxDecoration(

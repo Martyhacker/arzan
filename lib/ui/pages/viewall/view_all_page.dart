@@ -1,11 +1,7 @@
 import 'package:arzan/core/api/services/post_service.dart';
 import 'package:arzan/core/constants/palette.dart';
 import 'package:arzan/core/style/my_shape_decoration.dart';
-import 'package:arzan/core/utils/my_router.dart';
-import 'package:arzan/core/utils/view_builder.dart';
 import 'package:arzan/ui/pages/home/home_components/recommended_card.dart';
-import 'package:arzan/ui/pages/home/home_page.dart';
-import 'package:arzan/ui/pages/search/search_components/view_togglle_button.dart';
 import 'package:flutter/material.dart';
 
 class ViewAllPage extends StatefulWidget {
@@ -26,7 +22,7 @@ class _ViewAllPageState extends State<ViewAllPage> {
           style: TextStyle(color: Colors.black),
         ),
         centerTitle: true,
-        actions: [],
+        actions: const[],
         automaticallyImplyLeading: false,
         shape: myShapeDecoration(),
         leading: IconButton(
@@ -37,6 +33,7 @@ class _ViewAllPageState extends State<ViewAllPage> {
       ),
       body: SingleChildScrollView(
         child: Container(
+          padding: const EdgeInsets.all(7),
           child: FutureBuilder<dynamic>(
               future: PostService().fetchDiscounts(limit: 16),
               builder: (context, snap) {
@@ -49,7 +46,7 @@ class _ViewAllPageState extends State<ViewAllPage> {
                           crossAxisCount: 3, childAspectRatio: 0.65),
                       itemBuilder: (context, index) => HomeRecommendedCard(model: snap.data[index]));
                 } else {
-                  return Text('Oops');
+                  return const Text('Oops');
                 }
               }),
         ),

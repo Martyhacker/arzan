@@ -13,7 +13,6 @@ import 'package:arzan/ui/pages/home/home_components/block_card.dart';
 import 'package:arzan/ui/pages/home/home_components/tile_card.dart';
 import 'package:arzan/ui/pages/notifications/notifications_page.dart';
 import 'package:arzan/ui/pages/official_users/official_users_page.dart';
-import 'package:arzan/ui/pages/post_detail/post_detail_page.dart';
 import 'package:arzan/ui/pages/statistics/statistics_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';

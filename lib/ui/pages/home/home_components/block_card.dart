@@ -1,8 +1,6 @@
 import 'package:arzan/core/constants/palette.dart';
 import 'package:arzan/core/style/my_box_decorations.dart';
-import 'package:arzan/core/utils/my_router.dart';
 import 'package:arzan/core/widgets/favorite_button.dart';
-import 'package:arzan/ui/pages/post_detail/post_detail_page.dart';
 import 'package:flutter/material.dart';
 
 class HomeBlock extends StatelessWidget {
