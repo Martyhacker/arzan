@@ -5,9 +5,10 @@ import 'package:arzan/core/api/routes.dart';
 import 'package:http/http.dart' as http;
 
 class PostService {
-  Future<List<PostModel>?>fetchDiscounts({required int limit}) async {
+  Future<List<PostModel>?>fetchDiscount({required int limit, required int category, required int region}) async {
+
     var response =
-        await http.get(Uri.https(Routes.api, Routes.version+ Routes.postsAll, {"categoryId": "1", "limit":"$limit"}));
+        await http.get(Uri.https(Routes.api, Routes.version+ Routes.postsAll, {"categoryId": "$category", "limit":"$limit", "regionId":"$region"}));
     if (response.statusCode == 200) {
       var jsonData = jsonDecode(response.body)['posts'];
       List<PostModel> discounts = [];

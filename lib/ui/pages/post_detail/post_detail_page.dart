@@ -3,9 +3,11 @@ import 'package:arzan/core/api/models/post_model.dart';
 import 'package:arzan/core/constants/palette.dart';
 import 'package:arzan/core/style/my_box_decorations.dart';
 import 'package:arzan/core/style/my_paddings_margins.dart';
+import 'package:arzan/core/utils/date_formatter.dart';
 import 'package:arzan/core/widgets/dialogs.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
 
 import 'post_detail_components/stats_block.dart';
 import 'post_detail_components/vertical_divider.dart';
@@ -80,7 +82,7 @@ class _PostDetailPageState extends State<PostDetailPage> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text(widget.model.updatedAt,
+                                Text(CustomFormatter().formatDate(widget.model.updatedAt),
                                     style: Theme.of(context)
                                         .textTheme
                                         .bodyText1!
@@ -108,9 +110,10 @@ class _PostDetailPageState extends State<PostDetailPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           const SizedBox(height: 20),
-                          AutoSizeText(widget.model.content,
-                              textAlign: TextAlign.left,
-                              style: Theme.of(context).textTheme.bodyText1),
+                          HtmlWidget(widget.model.content),
+                          // AutoSizeText(widget.model.content,
+                          //     textAlign: TextAlign.left,
+                          //     style: Theme.of(context).textTheme.bodyText1),
                           const SizedBox(height: 20),
                           
                           //  AutoSizeText(widget.model.content,

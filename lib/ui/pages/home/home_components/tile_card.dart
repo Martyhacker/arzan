@@ -1,17 +1,23 @@
+import 'dart:convert';
+
+import 'package:arzan/core/api/models/post_model.dart';
 import 'package:arzan/core/style/my_box_decorations.dart';
+import 'package:arzan/core/utils/my_router.dart';
 import 'package:arzan/core/widgets/favorite_button.dart';
+import 'package:arzan/ui/pages/post_detail/post_detail_page.dart';
 import 'package:flutter/material.dart';
 
 class HomeTile extends StatelessWidget {
-  final VoidCallback onTap;
-  const HomeTile({Key? key, required this.onTap}) : super(key: key);
+  final PostModel? model;
+  const HomeTile({Key? key, required this.model})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     Size _size = MediaQuery.of(context).size;
     MyBoxDecs mbd = MyBoxDecs();
     return InkWell(
-      onTap: onTap,
+      onTap: ()=>MyRouter().route(context, PostDetailPage(model: model!)),
       child: Stack(
         children: [
           Container(
@@ -26,8 +32,16 @@ class HomeTile extends StatelessWidget {
                   Expanded(
                     child: Container(
                         height: double.infinity,
-                        decoration: mbd.tileCardInline(),
-                        child: const Icon(Icons.image, color: Colors.white)),
+                        //decoration: mbd.tileCardInline(),
+                        decoration: BoxDecoration(
+                            borderRadius: defaultBorderRadius,
+                            //color: Palette.kSoftGreen,
+                            image: DecorationImage(
+                                image: NetworkImage(
+                                    'https://arzan.info:3021/api' +
+                                        jsonDecode(model!.images)[0]),
+                                fit: BoxFit.fill)),
+                        child: model != null ? Container() : const Icon(Icons.image, color: Colors.white)),
                   ),
                   const SizedBox(width: 10),
                   Expanded(
@@ -35,12 +49,13 @@ class HomeTile extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Text('Lorem ipsum dolor sit amet ',
+                        Text(model!.title,
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
-                            style: TextStyle(fontWeight: FontWeight.bold)),
+                            style:
+                                const TextStyle(fontWeight: FontWeight.bold)),
                         Text(
-                          'Lorem ipsum dolor sit amet ' * 5,
+                          model!.content,
                           maxLines: 5,
                           softWrap: true,
                           overflow: TextOverflow.ellipsis,
@@ -48,7 +63,7 @@ class HomeTile extends StatelessWidget {
                         Row(
                           children: [
                             const Spacer(),
-                            Text('14 Jan. 2022',
+                            Text(model!.updatedAt,
                                 style: Theme.of(context).textTheme.caption)
                           ],
                         )

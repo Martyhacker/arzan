@@ -44,14 +44,15 @@ class _SearchPageState extends State<SearchPage> with TickerProviderStateMixin {
     UserView userView = Provider.of<UserView>(context);
     MyViewBuilder viewBuilder = MyViewBuilder();
     final _kTabPages = [
-      searchView.viewType == 'tile'
-          ? viewBuilder.buildTileView(HomeTile(onTap: () {}))
-          : searchView.viewType == 'block'
-              ? viewBuilder.buildGridView(const HomeBlock())
-              : viewBuilder.buildTileView(const HomeBigCard()),
-      userView.viewType == 'tile'
-          ? viewBuilder.buildGridView(const UserBlock())
-          : viewBuilder.buildTileView(const UserTile())
+      Container()
+      // searchView.viewType == 'tile'
+      //     ? viewBuilder.buildTileView(HomeTile(onTap: () {}))
+      //     : searchView.viewType == 'block'
+      //         ? viewBuilder.buildGridView(const HomeBlock())
+      //         : viewBuilder.buildTileView(const HomeBigCard()),
+      // userView.viewType == 'tile'
+      //     ? viewBuilder.buildGridView(const UserBlock())
+      //     : viewBuilder.buildTileView(const UserTile())
     ];
     final _kTabs = [const Tab(text: "Discounts"), const Tab(text: "Users")];
 

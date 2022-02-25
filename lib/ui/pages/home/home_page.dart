@@ -36,7 +36,10 @@ class _HomePageState extends State<HomePage> {
     Size _size = MediaQuery.of(context).size;
     MyViewBuilder viewBuilder = MyViewBuilder();
     HomeView viewProvider = Provider.of<HomeView>(context);
-    Future futureRecommended = PostService().fetchDiscounts(limit: 3);
+    Future futureRecommended =
+        PostService().fetchDiscount(limit: 3, category: 1, region: 6);
+    Future futureDiscounts =
+        PostService().fetchDiscount(limit: 12, category: 5, region: 6);
     return SafeArea(
       child: Scaffold(
         backgroundColor: Palette.kGrey,
@@ -124,25 +127,66 @@ class _HomePageState extends State<HomePage> {
                 child: Column(mainAxisSize: MainAxisSize.min, children: [
                   FutureBuilder<dynamic>(
                     future: futureRecommended,
-                    builder: (context, snap){
-                      if(snap.hasData){
+                    builder: (context, snap) {
+                      if (snap.hasData) {
                         return Row(
-                          children: List.generate(3, (index) => Expanded(child: HomeRecommendedCard(model: snap.data[index]))),
+                          children: List.generate(
+                              3,
+                              (index) => Expanded(
+                                  child: HomeRecommendedCard(
+                                      model: snap.data[index]))),
                         );
-                      }
-                      else{
+                      } else {
                         return const Text('Oh no');
                       }
                     },
                   ),
                   const ViewAllButton(),
                   //const HomeViewLabel(),
-                  viewProvider.viewType == 'tile'
-                      ? viewBuilder.homeTileView(HomeTile(
-                          onTap: () {}))
-                      : viewProvider.viewType == 'block'
-                          ? viewBuilder.homeGridView(const HomeBlock())
-                          : viewBuilder.homeTileView(const HomeBigCard())
+                  // viewProvider.viewType == 'tile'
+                  //     ? viewBuilder.homeTileView(HomeTile(
+                  //         onTap: () {}))
+                  //     : viewProvider.viewType == 'block'
+                  //         ? viewBuilder.homeGridView(const HomeBlock())
+                  //         : viewBuilder.homeTileView(const HomeBigCard())
+                  FutureBuilder<dynamic>(
+                      future: futureDiscounts,
+                      builder: (context, snap) {
+                        if (snap.hasData) {
+                          return viewProvider.viewType == 'tile'
+                              ? ListView(
+                                  physics: const NeverScrollableScrollPhysics(),
+                                  shrinkWrap: true,
+                                  children: List.generate(
+                                      snap.data.length,
+                                      (index) =>
+                                          HomeTile(model: snap.data[index])),
+                                )
+                              : viewProvider.viewType == "block"
+                                  ? GridView.builder(
+                                      itemCount: 10,
+                                      physics:
+                                          const NeverScrollableScrollPhysics(),
+                                      shrinkWrap: true,
+                                      gridDelegate:
+                                          const SliverGridDelegateWithFixedCrossAxisCount(
+                                              crossAxisCount: 3,
+                                              childAspectRatio: 0.55),
+                                      itemBuilder: (context, index) =>
+                                          HomeBlock(
+                                            model: snap.data[index],
+                                          ))
+                                  : ListView(
+                                      physics:
+                                          const NeverScrollableScrollPhysics(),
+                                      shrinkWrap: true,
+                                      children:
+                                          List.generate(snap.data.length, (index) => HomeBigCard(model: snap.data[index])),
+                                    );
+                        } else {
+                          return const Text('oops');
+                        }
+                      })
                 ]),
               ),
             ),

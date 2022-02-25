@@ -54,16 +54,16 @@ class _NotificationsPageState extends State<NotificationsPage> {
                   ),
                 )),
           ),
-          SliverToBoxAdapter(
-            child: SingleChildScrollView(
-              child: Column(
-                  children: List.generate(
-                      10,
-                      (index) => HomeTile(
-                          onTap: () => MyRouter().route(
-                              context, const NotificationDetailPage())))),
-            ),
-          )
+          // SliverToBoxAdapter(
+          //   child: SingleChildScrollView(
+          //     child: Column(
+          //         children: List.generate(
+          //             10,
+          //             (index) => HomeTile(
+          //                 onTap: () => MyRouter().route(
+          //                     context, const NotificationDetailPage())))),
+          //   ),
+          // )
         ],
       ),
     );

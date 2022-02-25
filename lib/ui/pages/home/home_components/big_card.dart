@@ -1,9 +1,14 @@
+import 'dart:convert';
+
+import 'package:arzan/core/api/models/post_model.dart';
 import 'package:arzan/core/style/my_box_decorations.dart';
+import 'package:arzan/core/utils/date_formatter.dart';
 import 'package:arzan/core/widgets/favorite_button.dart';
 import 'package:flutter/material.dart';
 
 class HomeBigCard extends StatelessWidget {
-  const HomeBigCard({Key? key}) : super(key: key);
+  final PostModel? model;
+  const HomeBigCard({Key? key, required this.model}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,25 +30,34 @@ class HomeBigCard extends StatelessWidget {
                 Expanded(
                   child: Container(
                     width: _size.width,
-                    decoration: mbd.bigCardInline(),
-                    child: const Icon(Icons.image, color: Colors.white),
+                    //decoration: mbd.bigCardInline(),
+                    decoration: BoxDecoration(
+                            borderRadius: defaultBorderRadius,
+                            //color: Palette.kSoftGreen,
+                            image: DecorationImage(
+                                image: NetworkImage(
+                                    'https://arzan.info:3021/api' +
+                                        jsonDecode(model!.images)[0]),
+                                fit: BoxFit.fill)),
+                    child: model != null ? Container(): const Icon(Icons.image, color: Colors.white),
                   ),
                 ),
                 Text(
-                  'data ' * 5,
+                  model!.title,
                   textAlign: TextAlign.left,
                   style: const TextStyle(
                       color: Colors.black, fontWeight: FontWeight.bold),
                 ),
                 Text(
-                  'Lorem ipsum dolor sit amet ' * 5,
+                  model!.content,
+                  maxLines: 2,
                   textAlign: TextAlign.left,
                 ),
-                const Center(
+                 Center(
                   child: Text(
-                    '14. Jan 2022',
+                    CustomFormatter().formatDate(model!.updatedAt),
                     textAlign: TextAlign.left,
-                    style: TextStyle(color: Colors.grey),
+                    style: const TextStyle(color: Colors.grey),
                   ),
                 )
               ],
